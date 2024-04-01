@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+
+        
+        .container {
+          
+            background-image: radial-gradient(
+            circle farthest-corner at 10% 20%,
+            rgba(253, 101, 133, 1) 0%,
+            rgba(255, 211, 165, 1) 90%
+             );
+            height: 100vh;
+            width: 100%;
+            text-align: center;
+            font-size:xx-large;
+            
+        
+                }
+            .input-box{
+                margin: 10px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size:medium;
+                
+        
+                
+            } 
+             
+            </style>
+            
+    
+</head>
+<body>
+    <div class="container">
+     <div class="title">Login</div>
+        <div class="content">
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="user-details">
+                    <div class="input-box">
+                        <label>User Name :</label>
+                <input type="text" name="username">        
+                    </div>
+
+                   
+                    <div class="input-box">
+                
+                      <label>Password :</label>
+                <input type="password" name="password">
+                    </div>
+
+                    
+                <div class="button">
+                    <input type="submit" name="submit" value="Login">
+                </div>
+
+            </form>
+        </div>    
+
+    </div>
+    {% for message in messages %}
+    <script>
+        alert('{{message}}');
+    </script>
+    {% endfor %}
+
+       
+       </div>
+
+    </div>
+    
+</body>
+</html>
